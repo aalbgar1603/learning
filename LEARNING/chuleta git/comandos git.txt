@@ -1,0 +1,74 @@
+/###########################################\
+|################ GIT-HUB ##################|
+\###########################################/
+
+git clone URL = Para descargar el repo donde estás
+
+// Para hacer remoto un directorio tenemos que enlazar el directorio
+// con el repositorio en GitHub con el siguiente comando.
+
+git remote add origin git@github.com:blkshhh/helloGIT-R
+
+// Una vez conectado ya podemos decirle que lo suba todo al repositorio.
+
+git push -u origin main = este comando se utiliza para enviar tus cambios locales a la rama principal (main) del
+                            repositorio remoto (origin). La opción -u o --set-upstream se utiliza para establecer
+                            la rama principal remota como una rama de seguimiento para tu rama local. Esto
+                            significa que en futuros usos del comando git push, solo necesitarás ejecutar git push
+                            sin especificar explícitamente la rama y el repositorio remotos.ç
+
+                            En resumen, git push -u origin main envía tus cambios locales a la rama principal del
+                            repositorio remoto y establece esa rama como una rama de seguimiento.
+\___Si nos da coflictos al subir porque otra persona haya modificado cosas tambien, 
+\___deberemos descargar el historial de cambios para ver que ha hecho
+
+git fetch
+
+#####
+minuto 3:15:46 de https://www.youtube.com/watch?v=3GymExBkKjE
+
+git config pullrebase false = para indicar que queremos que el pull se comporte como merge
+
+git pull origin main = para mergear el main origin de hub en el repo local
+
+/###########################################\
+|################## GIT ####################|
+\###########################################/
+git init = para empezar el control de versiones en la carpeta raiz donde se haga (se creará una carpeta oculta con lo necesario)
+
+git status = para ver el estado del proyecto
+\___
+    //Untracked = nos dice los fichero que no están siendo seguidos
+    //Changes to be committed = nos dice los que si que será seguidos
+
+git add fichero.ext = para añadirlo a la lista de seguido / committed
+
+git commit -m "comentario" = para hacer la captura y que no nos pida comentario porque ya se lo estamos dando
+\___
+    git stash = para crear una version temporal de la rama por si tenemos que cambiar de rama y tenemos código sin terminar para no confundir a los compañeros
+    \___
+        git stash pop = al volver a la rama para seguir con las version temporal que hemos hecho con stash
+        git stash drop = borrar la lista de stash's
+
+git checkout ["fichero.ext" | "ID-DeLaCaptura" | "tag/nombreTag"] = para volver el fichero al estado de la ultima captura o movernos a otra captura de la rama.
+\___
+    git tag nombreEtiqueta = para agregar una etiqueta a la captura donde estamos
+    git reset --hard = para movernos por las captura borrandolas si volvemos atrás... podemos recuperarlas haciendo un git reflog y mirando los ID de las capturas borradas y haciendo otro git reset --hard idCapturaBorrada
+
+
+git branch beta = para crear una subrama llamada beta
+\___
+    git switch beta = para movernos a la rama beta (o la que queramos)
+    git branch -m name = para cambiar el nombre de la rama master por otro nombre como main
+    \___
+        git merge main = con este comando hacemos que la rama que estamos mencionando se combine EN la rama en la que estramos [estamo en la beta y queremos que main se aplique en la beta para trabajar con una version mas reciente del main]
+
+git log = para ver el registro de la rama
+\___
+    [--graph] => (para verlo con mas detalles)
+    [--pretty=online] => mas sencillo
+    [--decorated --all --online] => resumido
+    \___
+        git reflog = para ver el log COMPLETO
+        git diff = para ver cambios que se han hecho desde la ultima captura
+
