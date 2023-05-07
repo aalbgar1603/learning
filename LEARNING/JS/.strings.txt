@@ -1,0 +1,23 @@
+// Uso:
+    let/var/const resultado = cadena1.concat(cadena2)
+    igual con todas
+//
+
+concat()
+
+startsWith() => si la cadena 1 comienza con los caracteres de la cadena 2
+endsWith()
+includes()
+indexOf()
+lastIndexOf()
+
+padStart()
+padEnd()
+repeat()
+
+split()
+substring()
+toLowerCase()
+toUpperCase()
+toString()
+trim()

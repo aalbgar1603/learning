@@ -2,7 +2,7 @@
 |################ GIT-HUB ##################|
 \###########################################/
 
-git clone URL = Para descargar el repo donde estás
+git clone URL = Para descargar el repo donde estés
 
 // Para hacer remoto un directorio tenemos que enlazar el directorio
 // con el repositorio en GitHub con el siguiente comando.
@@ -21,8 +21,7 @@ git push -u origin main = este comando se utiliza para enviar tus cambios locale
                             repositorio remoto y establece esa rama como una rama de seguimiento.
 \___Si nos da coflictos al subir porque otra persona haya modificado cosas tambien, 
 \___deberemos descargar el historial de cambios para ver que ha hecho
-
-git fetch
+        git fetch
 
 #####
 minuto 3:15:46 de https://www.youtube.com/watch?v=3GymExBkKjE
