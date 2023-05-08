@@ -1,0 +1,3 @@
+var arrayAsignaturas = [
+    ["Mates","Pedro"]
+]
