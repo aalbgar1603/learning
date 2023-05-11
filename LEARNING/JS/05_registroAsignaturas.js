@@ -1,41 +1,51 @@
-const obtenerInformacion = (materia)=>{
-    materias = {
-        deporte: ["pedro","juan","perico","lucia"],
-        fisica: ["pedro","laura","juan","perico"],
-        seguridad: ["carmen","lucia","laura","juan"]
+const obtenerInformacion = (materia) => {
+    const materias = {
+      deporte: ["pedro", "juan", "perico", "lucia"],
+      fisica: ["pedro", "laura", "juan", "perico"],
+      seguridad: ["carmen", "lucia", "laura", "juan"],
+    };
+  
+    if (materia !== undefined) {
+      return [materias[materia], materia];
     }
-
-    if (materia !== undefined){
-        return [materias[materia], materia];
-    }
-}
-
-    let informacion = obtenerInformacion(materias)
-    // let alumnos = informacion[0].join(", "); // Une los nombres de los alumnos separados por comas
+  };
+  
+  const mostrarInfo = (materia) => {
+    let informacion = obtenerInformacion(materia);
     let asignatura = informacion[1];
     let profesor = informacion[0].shift();
     let alumnos = informacion[0].join(", ");
-    // alert(`La asignatura es ${informacion.pop()}, el profesor es ${informacion.shift()} y los alumnos: ${informacion}`)
     document.write(
-        `La materia es: ${asignatura}<br>
-        Profesor: ${profesor}<br>
-        Alumnos: ${alumnos}<br><br>`);
+      `La materia es: ${asignatura}<br>
+      Profesor: ${profesor}<br>
+      Alumnos: ${alumnos}<br><br>`
+    );
+  };
+  
+  // Mostrar todas las asignaturas
+  document.write("Asignaturas disponibles:<br>");
+  const materiasDisponibles = Object.keys(obtenerInformacion());
+  for (let i = 0; i < materiasDisponibles.length; i++) {
+    document.write(materiasDisponibles[i] + "<br>");
+  }
+  
+  let materia = prompt("Dime la materia");
+  mostrarInfo(materia);
+  
 
-
-
-const cantidadDeClases = (alumno) => {
-    var informacion2 = obtenerInformacion();
-    let cantidadTotal = 0;
-    let clasesAsistiendo = [];
-    for (info in informacion2){
-        if (informacion2[info].includes(alumno)){
-            cantidadTotal++;
-            clasesAsistiendo.push(" "+ info)
-        }
-    }
-    return `${alumno} está en ${cantidadTotal} y son: ${clasesAsistiendo}.<br>`
-}
-document.write(cantidadDeClases("lucia"));
-document.write(cantidadDeClases("juan"));
-document.write(cantidadDeClases("perico"));
-document.write(cantidadDeClases("laura"));
+// const cantidadDeClases = (alumno) => {
+//     var informacion2 = obtenerInformacion();
+//     let cantidadTotal = 0;
+//     let clasesAsistiendo = [];
+//     for (info in informacion2){
+//         if (informacion2[info].includes(alumno)){
+//             cantidadTotal++;
+//             clasesAsistiendo.push(" "+ info)
+//         }
+//     }
+//     return `${alumno} está en ${cantidadTotal} y son: ${clasesAsistiendo}.<br>`
+// }
+// document.write(cantidadDeClases("lucia"));
+// document.write(cantidadDeClases("juan"));
+// document.write(cantidadDeClases("perico"));
+// document.write(cantidadDeClases("laura"));
