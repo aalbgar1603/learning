@@ -18,7 +18,7 @@ var peliculas = {
   };
   
 
-// Función para añadir una película al array
+
 // Función para añadir una película al objeto
 function agregarPelicula(nombre, portada, sinopsis) {
     var pelicula = {
