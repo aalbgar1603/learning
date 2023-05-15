@@ -1,25 +1,49 @@
 // Objeto de películas
 var peliculas = {
-    "Pelicula 1": {
-      nombre: "Pelicula 1",
+    "pluto": {
+      nombre: "pluto",
       portada: "url_portada_1.jpg",
-      sinopsis: "Sinopsis de la Pelicula 1."
+      sinopsis: "Sinopsis de la pluto"
     },
-    "Pelicula 2": {
-      nombre: "Pelicula 2",
+    "spiderman": {
+      nombre: "spiderman",
       portada: "url_portada_2.jpg",
-      sinopsis: "Sinopsis de la Pelicula 2."
+      sinopsis: "Sinopsis de la spiderman"
     },
-    "Pelicula 3": {
-      nombre: "Pelicula 3",
+    "F&F": {
+      nombre: "F&F",
       portada: "url_portada_3.jpg",
-      sinopsis: "Sinopsis de la Pelicula 3."
+      sinopsis: "Sinopsis de la F&F."
     }
   };
-  
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////  FUNCIONES  /////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////// BUSCAR PELICULA
+  function buscarPelicula() {
+    let pelicula = prompt("Dame el nombre de la peli");
+
+    // Comprobar si se ha cancelado el prompt
+  if (pelicula === null) {
+    // El usuario ha cancelado
+    alert("Operación cancelada");
+    return; // Salir de la función
+  }
+
+    if ( peliculas.hasOwnProperty(pelicula)) {
+      document.write(`${peliculas[pelicula].nombre}<br>`);
+      document.write(`${peliculas[pelicula].portada}<br>`);
+      document.write(`${peliculas[pelicula].sinopsis}<br>`);
+    } else {
+      alert("Eso no existe");
+      buscarPelicula();
+    }
+    
+  }
 
 
-// Función para añadir una película al objeto
+ ///////////// AGREGAR PELICULA
 function agregarPelicula(nombre, portada, sinopsis) {
     var pelicula = {
       nombre: nombre,
@@ -28,11 +52,9 @@ function agregarPelicula(nombre, portada, sinopsis) {
     };
     peliculas[nombre] = pelicula;
   }
-  
-  // Ejemplo de uso de la función agregarPelicula
-  agregarPelicula("Pelicula 4", "url_portada_4.jpg", "Sinopsis de la Pelicula 4.");
-  
-  // Mostrar las películas después de añadir una nueva
+
+///////////// MOSTRAR TODAS LAS PELICULAS
+function listadePeliculas() {
   for (var key in peliculas) {
     if (peliculas.hasOwnProperty(key)) {
       var pelicula = peliculas[key];
@@ -41,3 +63,51 @@ function agregarPelicula(nombre, portada, sinopsis) {
       document.write("<p>" + pelicula.sinopsis + "</p>");
     }
   }
+}
+
+function iniciarFunciones() {
+  // Obtener la opción del usuario a través de un prompt
+var opcion = prompt("Seleccione una opción:\n1. Buscar\n2. Agregar pelicula\n3. Listado de peliculas");
+  if (opcion === null) {
+    // El usuario ha cancelado
+    alert("Operación cancelada");
+    return; // Salir de la función
+  }
+// Convertir la opción a un número entero
+opcion = parseInt(opcion);
+
+// ELEGIR QUE FUNCION EJECUTAR
+switch (opcion) {
+  case 1:
+    // Llamar a la función 1
+    buscarPelicula();
+    break;
+  case 2:
+    // Llamar a la función 2
+    var nombre = prompt("Ingrese el nombre de la película:");
+    var portada = prompt("Ingrese la URL de la portada de la película:");
+    var sinopsis = prompt("Ingrese la sinopsis de la película:");
+    
+    agregarPelicula(nombre, portada, sinopsis);
+    listadePeliculas();
+    break;
+  case 3:
+    // Llamar a la función 3
+    listadePeliculas();
+    break;
+  default:
+    // Opción inválida
+    alert("Opción inválida. Por favor, seleccione una opción válida.");
+    iniciarFunciones();
+    break;
+}
+  // Ejemplo de uso de la función agregarPelicula
+  agregarPelicula("Pelicula 4", "url_portada_4.jpg", "Sinopsis de la Pelicula 4.");
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+iniciarFunciones();
