@@ -2,6 +2,18 @@
     background: #252525;
     color: antiquewhite;
 }
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.item-flex {
+    margin: 0.5em;
+    padding: 1em;
+    border: solid salmon 2px;
+    text-align: center;
+}
 img {
     width: 10em;
     height: auto;

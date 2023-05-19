@@ -1,25 +1,26 @@
-// var container = document.querySelector(".flex-container");
+var contenedor = document.querySelector(".flex-container");
 
-// function crearLlave(nombre,modelo,precio) {
-//     let img = `<img src='./llave.png'>`;
-//     nombre = `<h2>${nombre}</h2>`;
-//     modelo = `<h3>${modelo}</h3>`;
-//     precio = `<p>$${precio}</p>`;
+function crearLlave(nombre,modelo,precio) {
+    let img = `<img src='./llave.png'>`;
+    nombre = `<h2>${nombre}</h2>`;
+    modelo = `<h3 id="${modelo}">${modelo}</h3>`;
+    precio = `<p>$${precio}</p>`;
 
-//     return [img,nombre,modelo,precio];
-// }
+    return [img,nombre,modelo,precio];
+}
 
-// const llave = crearLlave("Llave 1","nueva","10");
-
-// container.innerHTML = llave[0] + llave[1] + llave[2] + llave[3];
 /////////////////////////////////////////////////////////////////////
 
-var listaModelosRandom = []; // Array para almacenar los números generados
+let fragmentoDeDocumento = document.createDocumentFragment();
 
-for (var i = 0; i < 20; i++) {
-    var modeloRandom = Math.random() * 10000;
-    var modeloRandom = Math.random() * 10000;
-    listaModelosRandom.push(modeloRandom); // Agregar el número generado al array
+for (var i = 1; i <= 20; i++) {
+    let modeloRandom = Math.round(Math.random() * 10000);
+    let precioRandom = Math.round(Math.random() * 10 + 30);
+    let llave = crearLlave(`Llave ${i}`,`Modelo: ${modeloRandom}`,`${precioRandom}`);
+    let div = document.createElement("DIV");
+    div.classList.add(`item-flex`,`item-${i}`);
+    div.innerHTML = llave.join("");
+    fragmentoDeDocumento.appendChild(div);
 }
-    document.write(listaModelosRandom.join("<br>"));
 
+contenedor.appendChild(fragmentoDeDocumento);
