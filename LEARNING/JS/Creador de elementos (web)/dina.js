@@ -15,14 +15,14 @@ class Crear {
         contenedor.appendChild(contenido)
     }
     h1(){
-        this.mensaje = document.getElementById("inputText").value;
+        this.mensaje = document.getElementById("inputText1").value;
         var contenedor = document.getElementById("contenedor");
         var contenido = document.createElement("H1");
         contenido.innerHTML = this.mensaje;
         contenedor.appendChild(contenido)
     }
     h2(){
-        this.mensaje = document.getElementById("inputText").value;
+        this.mensaje = document.getElementById("inputText2").value;
         var contenedor = document.getElementById("contenedor");
         var contenido = document.createElement("H2");
         contenido.innerHTML = this.mensaje;
