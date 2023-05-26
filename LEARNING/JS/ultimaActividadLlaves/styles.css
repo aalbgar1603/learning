@@ -1,19 +1,31 @@
 * {
     background: #252525;
     color: antiquewhite;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 1em;
 }
+
 .item-flex {
     margin: 0.5em;
     padding: 1em;
-    border: solid salmon 2px;
     text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
+<<<<<<< HEAD
 .item-flex:hover {
     box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
 }
@@ -22,6 +34,73 @@
 
 }
 img {
+=======
+
+.item-flex:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: animate-hover 0.5s;
+}
+
+@keyframes animate-hover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.item-flex::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.item-flex:hover::before {
+    opacity: 1;
+}
+
+.item-flex img {
+>>>>>>> 4bbaf006570c3a4372f834bfb29bc4d2bec851f9
     width: 10em;
     height: auto;
+    border-radius: 50%;
+    transition: opacity 0.3s ease, transform 0.5s;
+}
+
+.item-flex:hover img {
+    opacity: 0.8;
+    transform: rotate(10deg);
+}
+
+h2, h3, p {
+    margin: 0;
+    padding: 0;
+    color: antiquewhite;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
 }
