@@ -9,11 +9,15 @@
 </head>
 <body>
     <div>
-        <b>Columna: </b><input type="radio" name="opcion" id="columna">
-        <b>Celda: </b><input type="radio" name="opcion" id="celda">
+        <b>Columna: </b><input type="radio" name="opcion" id="columna" value="columna">
+        <b>Celda: </b><input type="radio" name="opcion" id="celda" value="celda">
         <br>
-        <b>Cantidad: </b><input type="number" id="cantidad">
-        <button onclick="mostrarValor()">Crear</button>
+        <b>Cantidad H: </b><input type="number" id="cantidadH">
+        <br>
+        <b>Cantidad V: </b><input type="number" id="cantidadV">
+        <br>
+        <button onclick="obtenerValor()">Crear</button>
+        <hr>
     </div>
     <div id="contenedor">
             <script src="./dina.js"></script>
