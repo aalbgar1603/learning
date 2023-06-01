@@ -3,11 +3,9 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
   box-shadow: inset 0 0 40px rgb(0, 0, 0);
 }
+
 /*MENU*/
 #cont_menu {
   position: fixed;
@@ -17,17 +15,18 @@ body {
 }
 #menu {
   list-style: none;
-  background-color: aqua;
+  background-color: rgba(0, 255, 255, 0);
   padding: 0;
   width: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #menu li a {
   text-decoration: none;
   color: black;
-  padding: 20px;
+  padding: 10px;
+  padding-top: 5px;
   display: block;
 }
 
@@ -37,9 +36,13 @@ body {
 }
 
 #menu li :hover {
-  background-color: aquamarine;
+  border-radius: 1em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #ffffff30;
 }
-/*MENU*/
+
+/*GENERADOR*/
 
 #container {
   position: absolute;
