@@ -26,11 +26,77 @@ const reviews = [
 ];
 
 ///////////////////////
+/////// STARTER
+document.addEventListener("DOMContentLoaded", function name() {
+  var autor = document.querySelector(".autor");
+  var trabajo = document.querySelector(".trabajo");
+  var info = document.querySelector(".info");
 
-var autor = document.querySelector("autor");
-var trabajo = document.querySelector("trabajo");
-var info = document.querySelector("info");
-var item = reviews[1];
-autor.textContent = item.name;
-trabajo.textContent = item.job;
-info.textContent = item.text;
+  const btn_next = document.querySelector(".next");
+  const btn_random = document.querySelector(".random");
+  const btn_prev = document.querySelector(".prev");
+
+  ////
+
+  function randomNumber() {
+    let cant = reviews.length;
+    let number = Math.floor(Math.random() * cant);
+    return number;
+  }
+  ////
+
+  var currentItem = 0;
+  const item = reviews[currentItem];
+
+  autor.textContent = item.name;
+  trabajo.textContent = item.job;
+  info.textContent = item.text;
+
+  ///
+
+  ///////////////////////////////////////////////////
+
+  btn_next.addEventListener("click", function name() {
+    var autor = document.querySelector(".autor");
+    var trabajo = document.querySelector(".trabajo");
+    var info = document.querySelector(".info");
+    if (currentItem >= reviews.length - 1) {
+      currentItem = 0;
+    } else {
+      currentItem++;
+    }
+    const item = reviews[currentItem];
+
+    autor.textContent = item.name;
+    trabajo.textContent = item.job;
+    info.textContent = item.text;
+  });
+
+  btn_prev.addEventListener("click", function name() {
+    var autor = document.querySelector(".autor");
+    var trabajo = document.querySelector(".trabajo");
+    var info = document.querySelector(".info");
+    if (currentItem <= 0) {
+      currentItem = reviews.length - 1;
+    } else {
+      currentItem--;
+    }
+    const item = reviews[currentItem];
+
+    autor.textContent = item.name;
+    trabajo.textContent = item.job;
+    info.textContent = item.text;
+  });
+
+  btn_random.addEventListener("click", function name() {
+    var autor = document.querySelector(".autor");
+    var trabajo = document.querySelector(".trabajo");
+    var info = document.querySelector(".info");
+
+    const item = reviews[randomNumber()];
+
+    autor.textContent = item.name;
+    trabajo.textContent = item.job;
+    info.textContent = item.text;
+  });
+});

@@ -1,3 +1,30 @@
-.border {
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review {
   border: solid 2px black;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.botones {
+  border: solid 2px black;
+  padding: 10px;
+}
+
+.btn {
+  background: #3cffbb00;
+  border: solid 2px #93a5ff;
+  color: #93a5ff;
+  border-radius: 5px;
+  margin: 0 5px;
 }
